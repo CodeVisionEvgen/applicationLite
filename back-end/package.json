@@ -1,20 +1,22 @@
 {
-  "name": "back-end",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon main.js",
-    "docker/kill": "docker rmi -f $(docker images -aq)",
-    "docker": "docker run -d -p 4000:4000 back"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.20"
-  }
+    "name": "application",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "express": "^4.18.2"
+    },
+    "description": "Simple application express + react",
+    "scripts": {
+        "docker/killAll": "docker rmi -f $(docker images -aq)",
+        "start/dev": "nodemon main.js",
+        "start/prod": "node main.js NODE_ENV=production"
+    },
+    "keywords": [
+        "simple-app"
+    ],
+    "author": "CodeVision",
+    "license": "ISC",
+    "devDependencies": {
+        "nodemon": "^2.0.20"
+    }
 }

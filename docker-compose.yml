@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+ web:
+     build: front-end/
+     volumes:
+      - ./front-end:/urs/app/front
+     ports: 
+      - 3000:3000
+     depends_on:
+      - back
+     links: 
+      - back:back
+ back:
+      build: back-end/
+      volumes:
+       - ./back-end:/urs/app/back
+      expose:
+       - 8080
+      ports:
+       - 4000:8080
+      
+  

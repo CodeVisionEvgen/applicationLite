@@ -1,8 +1,8 @@
 FROM node:16.0
-WORKDIR ${HOME}/app/
+ENV HOME=/usr/src/app
+WORKDIR ${HOME}/back/
 COPY package*.json ./
+COPY . ./
 RUN npm install
-COPY . .
-EXPOSE 4000
 
-CMD ["npm", "start"]
+CMD ["npm", "run" ,"start/dev"]
