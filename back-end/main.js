@@ -6,7 +6,7 @@ async function initApplication() {
     return new Promise(resolve=>{
         server.use("",route);
         server.listen(8080,'0.0.0.0',()=>{
-            console.log(`Back-end server start`);
+            console.log(`Back-end server start!`);
             resolve();
         })
     })
